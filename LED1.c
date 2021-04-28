@@ -1,7 +1,5 @@
 #include<pigpio.h>
 int main(){
- while(1){
-  gpioSetMode(1,pi_input);
+  gpioSetMode(1,PI_OUTPUT);
   return 0;
- }
 }
