@@ -1,5 +1,5 @@
 #include<stdio.h>
-include<pigpio.h>
+#include<pigpio.h>
 int main(){
   if (gpioInitialise() < 0){
   printf("1");
