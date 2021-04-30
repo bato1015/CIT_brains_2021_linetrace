@@ -7,7 +7,7 @@ int main(){
   printf("2");
   }
   gpioSetMode(26,PI_INPUT);
-  int i=10;
+  int r=10;
   int d=0;
   
   while(1){
