@@ -8,7 +8,7 @@ int main(){
   }
   gpioSetMode(26,PI_INPUT);
   while(1){
-    gpioWrite(26,1);
+    gpioWrite(26,0);
   }
   return 0;
 }
