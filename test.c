@@ -13,6 +13,7 @@ int main(){
   }*/
   for(int i=0;i<255;i=i+i*10){
   gpioPWM(26,i);
+  wait(0.5);
   }
   return 0;
 }
