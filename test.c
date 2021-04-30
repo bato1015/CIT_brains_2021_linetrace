@@ -7,6 +7,9 @@ int main(){
   printf("2");
   }
   gpioSetMode(26,PI_INPUT);
+  while(1){
+    int gpioWrite(26,1);
+  }
   return 0;
 }
 
