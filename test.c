@@ -27,7 +27,7 @@ int main(){
     gpioSleep(PI_TIME_RELATIVE,0,500000);
     i=i+10;
   }
-  /*for(int i=0;i<255;i+=10){
+  for(int i=0;i<255;i+=10){
   gpioPWM(26,i);
   wait(1);
   }*/
