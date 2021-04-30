@@ -12,7 +12,7 @@ int main(){
     //gpioWrite(26,0);
     gpioPWM(26,i);
     if(i>250){
-    i=-250;
+    i=i-250;
     }
     gpioSleep(PI_TIME_RELATIVE,0,500000);
     i=i+10;
