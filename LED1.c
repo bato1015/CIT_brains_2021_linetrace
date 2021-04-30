@@ -6,7 +6,7 @@ int main(){
   if (gpioInitialise() < 0){
   }else{
   }
-  int gpioSetMode(outputpin,PI_OUTPUT);
+  int gpioSetMode(outputpin,1);
   gpioTerminate();
   return 0;
 }
