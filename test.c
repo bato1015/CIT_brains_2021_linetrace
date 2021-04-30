@@ -14,7 +14,7 @@ int main(){
     gpioPWM(26,d);
     gpioSleep(PI_TIME_RELATIVE,0,500000);
     d+=r;
-    if(d>=255||d<=0){
+    if(d>=250||d<=0){
       r*=-1;
     }
   }
