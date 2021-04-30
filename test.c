@@ -7,14 +7,20 @@ int main(){
   printf("2");
   }
   gpioSetMode(26,PI_INPUT);
-  /*while(1){
+  int i=0;
+  while(1){
     //gpioWrite(26,0);
-    gpioPWM(26,100);
-  }*/
-  for(int i=0;i<255;i=i+i*10){
-  gpioPWM(26,i);
-  wait(0.5);
+    gpioPWM(26,i);
+    if(i>250){
+    i=-250;
+    }
+    gpioSleep(PI_TIME_RELATIVE,0,500000);
+    i=i+10;
   }
+  /*for(int i=0;i<255;i+=10){
+  gpioPWM(26,i);
+  wait(1);
+  }*/
   return 0;
 }
 
