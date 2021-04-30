@@ -1,6 +1,10 @@
 #include<stdio.h>
 int main(){
-  printf("test");
+  if (gpioInitialise() < 0){
+  printf("1");
+  }else{
+  printf("2");
+  }
   return 0;
 }
 
