@@ -6,7 +6,7 @@ int main(){
   }else{
   printf("2");
   }
-  gpioSetMode(17,PI_INPUT);
+  gpioSetMode(16,PI_INPUT);
   return 0;
 }
 
