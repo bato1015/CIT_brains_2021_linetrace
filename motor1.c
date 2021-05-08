@@ -22,7 +22,7 @@ void set_moter_pwm(int pin_number1,int pin_number2, int mode1, int mode2,int tim
   }
 int main(){
   while(1){
-    set_motor_pwm(26,27,1,0,5);
+    set_motor_pwm(26,27,1,0,2);
   }
   return 0;
  }
