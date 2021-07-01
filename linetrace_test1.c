@@ -12,19 +12,19 @@
 
 void gpio_setup()
 {
-  gpioSetMode(MOTOR_R1, PI_OUTPUT);
-  gpioSetMode(MOTOR_R2, PI_OUTPUT);
-  gpioSetMode(MOTOR_L1, PI_OUTPUT);
-  gpioSetMode(MOTOR_L2, PI_OUTPUT);
+    gpioSetMode(MOTOR_R1, PI_OUTPUT);
+    gpioSetMode(MOTOR_R2, PI_OUTPUT);
+    gpioSetMode(MOTOR_L1, PI_OUTPUT);
+    gpioSetMode(MOTOR_L2, PI_OUTPUT);
 
-  gpioSetMode(SENSOR_R, PI_INPUT);
-  gpioSetMode(SENSOR_L, PI_INPUT);
+    gpioSetMode(SENSOR_R, PI_INPUT);
+    gpioSetMode(SENSOR_L, PI_INPUT);
 }
 
 void move_motorR(int pin_num1, int pin_num2, int speed)
 {
     //speed : -255~255
-    gpioWrite(pin_num1, LOW);//正転
+    gpioWrite(pin_num1, LOW); //正転
     gpioWrite(pin_num2, HIGH);
     gpioPWM(pin_num1, speed);
     gpioPWM(pin_num2, speed);
@@ -32,7 +32,7 @@ void move_motorR(int pin_num1, int pin_num2, int speed)
 void move_motorL(int pin_num3, int pin_num4, int speed)
 {
     //speed : -255~255
-    gpioWrite(pin_num3, HIGH);//正転
+    gpioWrite(pin_num3, HIGH); //正転
     gpioWrite(pin_num4, LOW);
     gpioPWM(pin_num3, speed);
     gpioPWM(pin_num4, speed);
@@ -46,14 +46,17 @@ int main()
         return 1;
     }
     else
+    {
         printf("pigpio initialised okay.\n");
+        gpio_setup();
+    }
 
     while (1)
     {
         if (gpioRead(SENSOR_R) == 1 && gpioRead(SENSOR_L) == 1)
         {
             printf("All OK!\n");
-            Write:
+        Write:
             move_motorR(MOTOR_R1, MOTOR_R2, 200); // //speed (ここでいうi)は-255~255の範囲
             //gpioSleep(PI_TIME_RELATIVE, 0, SECOND_TO_MICRO * 1);
             move_motorL(MOTOR_L1, MOTOR_L2, 200); // //speed (ここでいうi)は-255~255の範囲
