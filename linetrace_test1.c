@@ -10,11 +10,20 @@
 #define HIGH 0x1
 #define LOW 0x0
 
+void gpio_setup()
+{
+  gpioSetMode(MOTOR_R1, PI_OUTPUT);
+  gpioSetMode(MOTOR_R2, PI_OUTPUT);
+  gpioSetMode(MOTOR_L1, PI_OUTPUT);
+  gpioSetMode(MOTOR_L2, PI_OUTPUT);
+
+  gpioSetMode(SENSOR_R, PI_INPUT);
+  gpioSetMode(SENSOR_L, PI_INPUT);
+}
+
 void move_motorR(int pin_num1, int pin_num2, int speed)
 {
     //speed : -255~255
-    gpioSetMode(pin_num1, PI_INPUT);
-    gpioSetMode(pin_num2, PI_INPUT);
     gpioWrite(pin_num1, LOW);//正転
     gpioWrite(pin_num2, HIGH);
     gpioPWM(pin_num1, speed);
@@ -23,8 +32,6 @@ void move_motorR(int pin_num1, int pin_num2, int speed)
 void move_motorL(int pin_num3, int pin_num4, int speed)
 {
     //speed : -255~255
-    gpioSetMode(pin_num3, PI_INPUT);
-    gpioSetMode(pin_num4, PI_INPUT);
     gpioWrite(pin_num3, HIGH);//正転
     gpioWrite(pin_num4, LOW);
     gpioPWM(pin_num3, speed);
