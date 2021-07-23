@@ -38,7 +38,7 @@ int main()
 
     gpio_setup();
 
-    //入力テスト
+    //入力テスト---------------------------------------------------------------------
     /*
   while(1)
   {
@@ -46,8 +46,7 @@ int main()
        gpioDelay(0.05 * SECOND_TO_MICRO);
   }
 */
- 
-  //PWM出力テスト
+  //PWM出力テスト-----------------------------------------------
   /*
   int i = 0;
 
@@ -67,9 +66,12 @@ int main()
 
   motor_stop(MOTOR_R1, MOTOR_R2, MOTOR_L1, MOTOR_L2);
   gpioDelay(SECOND_TO_MICRO);
+<<<<<<< HEAD
   
   */
 //-----------------------------
+
+//ライントレース---------------------------------------------------
     while (1)
     {
 	gpioSleep(PI_TIME_RELATIVE, 0, 050000);
@@ -95,10 +97,11 @@ int main()
             motor_move2(MOTOR_L1, MOTOR_L2, 50);
         }
     }
+    //PWMテスト時はここから上までコメントアウト------------------
     gpioTerminate();
     return 0;
 }
-//--------------------
+
 //GPIO設定
 void gpio_setup()
 {
